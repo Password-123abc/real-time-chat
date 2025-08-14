@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1c1c1e;
+  color: #f5f5f7;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR (Users Panel) */
+.users-panel {
+  width: 25%;
+  border-right: 1px solid #2c2c2e;
+  padding: 20px;
+  background-color: #2c2c2e;
+}
+
+.users-panel h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#user-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+#user-list li {
+  padding: 10px 15px;
+  background-color: #3a3a3c;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #f5f5f7;
+}
+
+/* CHAT PANEL */
+.chat-panel {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #1c1c1e;
+}
+
+.chat-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 16px;
+  background-color: #2c2c2e;
+}
+
+/* CHAT BUBBLES */
+.message-bubble {
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  max-width: 80%;
+  word-wrap: break-word;
+  display: inline-block;
+  clear: both;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.message-bubble strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.message-bubble.other {
+  background-color: #3a3a3c;
+  color: #f5f5f7;
+  float: left;
+  border-bottom-left-radius: 0;
+}
+
+.message-bubble.self {
+  background-color: #0a84ff;
+  color: white;
+  float: right;
+  border-bottom-right-radius: 0;
+}
+
+/* INPUT AREA */
+.message-box {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border: 1px solid #444;
+  border-radius: 999px;
+  font-size: 16px;
+  background-color: #3a3a3c;
+  color: #f5f5f7;
+  outline: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #0a84ff;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE: Mobile Layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .users-panel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #2c2c2e;
+    padding: 10px 15px;
+  }
+
+  .chat-panel {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .message-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #message-input,
+  #send-button {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  #send-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
